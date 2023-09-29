@@ -30,8 +30,13 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 void quick_sort_helper(int *array, int lo, int hi, size_t size);
 int partition(int *array, int lo, int hi, size_t size);
-void _swap(int *array, int i, int j);
+
+/* Rename one of the _swap functions */
+void _swap_array(int *array, int i, int j);
+
+/* Keep the other _swap function */
 void _swap(listint_t **node, listint_t **list);
+
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
@@ -49,4 +54,3 @@ void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 
 #endif /* SORT_H */
-

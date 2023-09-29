@@ -9,7 +9,7 @@
  */
 void print_array(const int *array, size_t size)
 {
-	ize_t i;
+	size_t i;
 
 	i = 0;
 	while (array && i < size)
