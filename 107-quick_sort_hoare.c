@@ -19,10 +19,10 @@ void qsh_helper(int *array, int lo, int hi, size_t size);
  */
 void quick_sort_hoare(int *array, size_t size)
 {
-    if (array == NULL || size < 2)
-        return;
+	if (array == NULL || size < 2)
+		return;
 
-    qsh_helper(array, 0, size - 1, size);
+	qsh_helper(array, 0, size - 1, size);
 }
 
 /**
@@ -34,14 +34,14 @@ void quick_sort_hoare(int *array, size_t size)
  */
 void qsh_helper(int *array, int lo, int hi, size_t size)
 {
-    int p;
+	int p;
 
-    if (lo < hi)
-    {
-        p = hoare_partition(array, lo, hi, size);
-        qsh_helper(array, lo, p, size);
-        qsh_helper(array, p + 1, hi, size);
-    }
+	if (lo < hi)
+	{
+		p = hoare_partition(array, lo, hi, size);
+		qsh_helper(array, lo, p, size);
+		qsh_helper(array, p + 1, hi, size);
+	}
 }
 
 /**
@@ -55,29 +55,27 @@ void qsh_helper(int *array, int lo, int hi, size_t size)
  */
 int hoare_partition(int *array, int lo, int hi, size_t size)
 {
-    int pivot = array[lo];
-    int i = lo - 1;
-    int j = hi + 1;
-    int tmp;
+	int pivot = array[lo];
+	int i = lo - 1;
+	int j = hi + 1;
+	int tmp;
 
-    while (1)
-    {
-        do
-        {
-            i++;
-        } while (array[i] < pivot);
+	while (1)
+	{
+		do {
+			i++;
+		} while (array[i] < pivot);
 
-        do
-        {
-            j--;
-        } while (array[j] > pivot);
+		do {
+			j--;
+		} while (array[j] > pivot);
 
-        if (i >= j)
-            return j;
+		if (i >= j)
+			return (j);
 
-        tmp = array[i];
-        array[i] = array[j];
-        array[j] = tmp;
-        print_array(array, size);
-    }
+		tmp = array[i];
+		array[i] = array[j];
+		array[j] = tmp;
+		print_array(array, size);
+	}
 }
