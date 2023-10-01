@@ -12,9 +12,9 @@
  */
 typedef struct listint_s
 {
-    const int n;
-    struct listint_s *prev;
-    struct listint_s *next;
+	const int n;
+	struct listint_s *prev;
+	struct listint_s *next;
 } listint_t;
 
 /* Print array */
@@ -37,7 +37,6 @@ void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void copy(int *src, int *dst, int size);
-void merge(int *array, int *buff, int minL, int maxL, int minR, int maxR);
 void printcheck(int *array, int r1, int r2);
 void split(int *array, int *buff, int min, int max, int size);
 void heap_sort(int *array, size_t size);
@@ -46,10 +45,15 @@ void radix_sort(int *array, size_t size);
 void csort2(int *array, int **buff, int size, int lsd);
 void csort(int *array, int size, int lsd);
 void bitonic_sort(int *array, size_t size);
-void merge_bitonic(int arr[], int low, int nelemnt, int order);
 void quick_sort_hoare(int *array, size_t size);
-void print_array(const int *array, size_t size);
-void qsh_helper(int *array, int lo, int hi, size_t size);
-int hoare_partition(int *array, int lo, int hi, size_t size);
+void swap_ints(int *a, int *b);
+void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
+		char flow);
+void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
+void bitonic_sort(int *array, size_t size);
+
+/* Added prototype for the original merge function */
+void merge(int *array, int minL, int maxL, int minR, int maxR);
 
 #endif /* SORT_H */
+
